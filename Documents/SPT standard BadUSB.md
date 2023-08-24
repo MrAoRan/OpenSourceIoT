@@ -12,7 +12,7 @@ organization and all the members.]
 >>1. To make a mini BadUSB tool,we decided to use the _Digispark kickstarter_-**Atinay85*** development board,it is mini and convenient to develop,although it's price is about 15 yuan.(About 2 dollar)
 >>2. For the code of all the functions,we chose Arduino Framework to edit and develop it,because it's so suitable for the Atinay85 and language it used is C++,it was used very widely and easy for our members to understand and study.
 >>3. First of all,to prepare our edition,we need to add the additional board url to the [ArduinoIDE] -> [Preferences] -> [Additional Boards Manager URLs].
->>4. Besides,h.After we add the describe file to the manager,we can import the sample file into our workspace and then see the core library of our code developing is a Arduino library called DigKeyboard.
+>>4. Besides,After we add the describe file to the manager,we can import the sample file into our workspace and then see the core library of our code developing is a Arduino library called DigKeyboard.
 * Describe Files' URL http://digistump.com/package_digistump_index.json
 * [Digis Drive Release - Github Repository](https://github.com/digistump/DigistumpArduino/releases)
 
