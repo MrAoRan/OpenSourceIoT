@@ -16,7 +16,7 @@
 >>1. 为了制作一个迷你BadUSB工具，我们决定使用_Digispark kickstarter_-**Atinay85***开发板，尽管它的价格在15元左右，但它很迷你，开发起来也很方便。（约2美元）
 >>2. 对于所有功能代码的开发，我们选择了Arduino Framework来编辑和开发它，因为它非常适合Atinay85，而且它使用的语言是C++，它被广泛使用，我们的成员很容易理解和学习。
 >>3. 首先，为了准备我们的版本，我们需要将额外的管理器url添加到[ArduinoIDE]->[Preferences]->[additional Boards Manager URLs]。
->>4. 此外，h。在我们将描述文件添加到管理器中后，我们可以将示例文件导入到我们的工作空间中，然后看到我们代码开发的核心库是一个名为DigKeyboard的Arduino库。
+>>4. 此外，在我们将描述文件添加到管理器中后，我们可以将示例文件导入到我们的工作空间中，然后看到我们代码开发的核心库是一个名为DigKeyboard的Arduino库。
 
 * 开发板描述文件的URLhttp://digistump.com/package_digistump_index.json
 * [Digis Drive Release-Github Repository](https://github.com/digistump/DigistumpArduino/releases)
