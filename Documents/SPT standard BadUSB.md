@@ -1,4 +1,4 @@
-> # **Science Projects Terminal Standard BadUSB**
+# **Science Projects Terminal Standard BadUSB**
 #### _Document Version:Original-Alpha 1.0  Editing date:2023/08/23_
 ***
 
