@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+    <title>欢迎来到科学社</title>
+    <link rel="stylesheet" href="NewLogin.css">
+    <link rel="shortcut icon" href="icon.png" type="image/png" />
+    <link rel="icon" href="icon.png" type="image/png" />
+</head>
+
+<body>
+    <div class="EnglishSwitch">
+        <button class = "EnglishSwitch" style="width: 45px;height: 30px;" onclick="window.location.href = 'ENewLogin.html';">
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="form-box">
+            <!-- 注册 -->
+            <div class="register-box hidden">
+            <form id="RegisterForm" action="Register.php" method="post">
+                <h1>注册</h1>
+                <input type="text" name="username" placeholder="用户名" required>
+                <input type="email" name="email" placeholder="邮箱" required>
+                <input type="password" name="password" placeholder="密码" required>
+                <input type="password" name="password2"placeholder="确认密码" required>
+                <button type="submit">注册</button>
+            </form>
+            </div>
+
+            <!-- 登录 -->
+            <div class="login-box">
+            <form id="LoginForm" action="Login.php" method="post">
+                <h1>登录</h1>
+                <input type="text" placeholder="用户名" maxlength="9" required>
+                <input type="password" placeholder="密码" pattern="[A-Za-z0-9]{5,17}" required>
+                <button>登录</button>
+            </form>
+            </div>
+        </div>
+
+        <div class="con-box left">
+            <h2>欢迎来到<span>科学社</span></h2>
+            <p>快来加入<span>我们</span>吧！</p>
+            <img src="register.png" alt="">
+            <p>已有账号</p>
+            <button id="login">去登录</button>
+        </div>
+        <div class="con-box right">
+            <h2>欢迎回到<span>科学社</span></h2>
+            <p>我们已经等<span>你</span>很久啦！</p>
+            <img src="login.png" alt="">
+            <p>没有账号？</p>
+            <button id="register">去注册</button>
+        </div>
+    </div>
+    <script>
+        // 要操作到的元素
+        let login=document.getElementById('login');
+        let register=document.getElementById('register');
+        let form_box=document.getElementsByClassName('form-box')[0];
+        let register_box=document.getElementsByClassName('register-box')[0];
+        let login_box=document.getElementsByClassName('login-box')[0];
+        // 去注册按钮点击事件
+        register.addEventListener('click',()=>{
+            form_box.style.transform='translateX(80%)';
+            login_box.classList.add('hidden');
+            register_box.classList.remove('hidden');
+        })
+        // 去登录按钮点击事件
+        login.addEventListener('click',()=>{
+            form_box.style.transform='translateX(0%)';
+            register_box.classList.add('hidden');
+            login_box.classList.remove('hidden');
+        })
+    </script>
+</body>
+
+</html>

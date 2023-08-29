@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login/Register</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-image: url("PFlowerBackground.png");
+		}
+		.container {
+			width: 80%;
+			max-width: 600px;
+			margin: 0 auto;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+		h1 {
+			text-align: center;
+			margin-top: 0;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		input[type=text], input[type=password] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+			background-color: #f8f8f8;
+		}
+		button {
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #45a049;
+		}
+		.error {
+			color: red;
+			font-size: 0.8em;
+			margin-bottom: 10px;
+		}
+		.success {
+			color: green;
+			font-size: 0.8em;
+			margin-bottom: 10px;
+		}
+		.signup-link {
+			text-align: center;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Login/Register</h1>
+		<form id="login-form" action="" method="post">
+			<input type="text" placeholder="Username" name="username" required>
+			<input type="password" placeholder="Password" name="password" required>
+			<div id="login-error" class="error"></div>
+			<div id="login-success" class="success"></div>
+			<button type="submit" id="login-btn">Login</button>
+		</form>
+		<div class="signup-link">
+			Don't have an account? <a href="#register-form">Sign up</a>
+		</div>
+		<form id="register-form" action="" method="post" style="display: none;">
+			<input type="text" placeholder="Username" name="username" required>
+			<input type="password" placeholder="Password" name="password" required>
+			<input type="password" placeholder="Confirm Password" name="confirm-password" required>
+			<div id="register-error" class="error"></div>
+			<div id="register-success" class="success"></div>
+			<button type="submit" id="register-btn">Register</button>
+		</form>
+		<div class="signup-link">
+			Already have an account? <a href="#login-form">Log in</a>
+		</div>
+	</div>
+
+	<script>
+		var loginForm = document.getElementById("login-form");
+		var registerForm = document.getElementById("register-form");
+		var loginBtn = document.getElementById("login-btn");
+		var registerBtn = document.getElementById("register-btn");
+
+		document.querySelector('a[href="#register-form"]').addEventListener("click", function() {
+			loginForm.style.display = "none";
+			registerForm.style.display = "block";
+		});
+
+		document.querySelector('a[href="#login-form"]').addEventListener("click", function() {
+			loginForm.style.display = "block";
+			registerForm.style.display = "none";
+		});
+
+		loginBtn.addEventListener("click", function(e) {
+			e.preventDefault();
+			var username = loginForm.elements["username"].value.trim();
+			var password = loginForm.elements["password"].value.trim();
+			if (username === "" || password === "") {
+				document.getElementById("login-error").innerHTML = "Please fill in all fields";
+			} else {
+				// Perform login check here
+				document.getElementById("login-success").innerHTML = "Login successful!";
+			}
+		});
+
+		registerBtn.addEventListener("click", function(e) {
+			e.preventDefault();
+			var username = registerForm.elements["username"].value.trim();
+			var password = registerForm.elements["password"].value.trim();
+			var confirmPassword = registerForm.elements["confirm-password"].value.trim();
+			if (username === "" || password === "" || confirmPassword === "") {
+				document.getElementById("register-error").innerHTML = "Please fill in all fields";
+			} else if (password !== confirmPassword) {
+				document.getElementById("register-error").innerHTML = "Passwords do not match";
+			} else {
+				// Perform registration here
+				document.getElementById("register-success").innerHTML = "Registration successful!";
+			}
+		});
+	</script>
+</body>
+</html>
